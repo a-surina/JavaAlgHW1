@@ -10,14 +10,20 @@ public class Main {
         String[] coloursAvailable = {"green", "blue", "pink"};
         //3. MyClass:
         MyClass myItemDress = new MyClass(quantity, size, price, true, name, coloursAvailable);
-        System.out.println(myItemDress.presentData());
+        System.out.println("1. Вывод данных\n" + myItemDress.presentData());
 
         //Compare to another instance:
         MyClass myItemSkit = new MyClass(4, 'S', 1499.0, true, "Skirt", new String[]{"black", "blue"});
-        System.out.println(myItemSkit.equals(myItemDress)); //false
+        long startTime = System.nanoTime();
+        System.out.println("2. Equals to different instance: " + myItemSkit.equals(myItemDress)); //false
+        double elapsedNanos = (double) (System.nanoTime() - startTime)/1000000;
+        System.out.println("\tTime elapsed: " + String.valueOf(elapsedNanos) + " milliseconds\n");
 
         //Compare to an identical instance:
         MyClass myItemDressCopy = new MyClass(myItemDress.id, myItemDress.quantity, myItemDress.size, myItemDress.price, myItemDress.inStock, myItemDress.name, myItemDress.coloursAvailable);
-        System.out.println(myItemDressCopy.equals(myItemDress)); //true
+        long startTime2 = System.nanoTime();
+        System.out.println("2. Equals to an identical instance: " + myItemDressCopy.equals(myItemDress)); //true
+        double elapsedNanos2 = (double) (System.nanoTime() - startTime2)/1000000;
+        System.out.println("\tTime elapsed: " + String.valueOf(elapsedNanos2) + " milliseconds");
     }
 }

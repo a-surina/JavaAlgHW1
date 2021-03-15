@@ -33,8 +33,7 @@ public class MyClass {
 
     public String presentData() {
 
-        return "Information about the item:\n" +
-                "id: " + String.valueOf(id) + "\n" +
+        return "id: " + String.valueOf(id) + "\n" +
                 "name: " + name + "\n" +
                 "size: " + String.valueOf(size) + "\n" +
                 "colours: " + Arrays.toString(coloursAvailable) + "\n" +
