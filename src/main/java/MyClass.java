@@ -42,7 +42,7 @@ public class MyClass {
                 "in stock: " + String.valueOf(inStock) + "\n" +
                 "quantity: " + String.valueOf(quantity) + "\n";
     }
-    
+
     public boolean equals(MyClass item) {
         return ((this.id ==  item.id) &&
                 (this.quantity == item.quantity) &&
