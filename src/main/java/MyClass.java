@@ -1,15 +1,18 @@
 import java.util.Arrays;
 
+//3. My own class:
 public class MyClass {
+    //1. Primitive:
     int id;
     int quantity;
     char size;
     double price;
     boolean inStock;
+    //2. Non-primitive:
     String name;
     String[] coloursAvailable;
 
-    //Random id
+    //Random id constructor
     public MyClass(int quantity, char size, double price, boolean inStock, String name, String[] coloursAvailable) {
         this.id = 10_000 + (int) (Math.random() * 90_000);
         this.quantity = quantity;
@@ -20,7 +23,7 @@ public class MyClass {
         this.coloursAvailable = coloursAvailable;
     }
 
-    //Id given
+    //Id given constructor
     public MyClass(int id, int quantity, char size, double price, boolean inStock, String name, String[] coloursAvailable) {
         this.id = id;
         this.quantity = quantity;
@@ -31,19 +34,18 @@ public class MyClass {
         this.coloursAvailable = coloursAvailable;
     }
 
-    public String presentData() {
-
-        return "id: " + String.valueOf(id) + "\n" +
-                "name: " + name + "\n" +
-                "size: " + String.valueOf(size) + "\n" +
-                "colours: " + Arrays.toString(coloursAvailable) + "\n" +
-                "price: " + String.valueOf(price) + "\n" +
-                "in stock: " + String.valueOf(inStock) + "\n" +
-                "quantity: " + String.valueOf(quantity) + "\n";
+    public void printer() {
+        System.out.print("id: " + id + "\n");
+        System.out.print("name: " + name + "\n");
+        System.out.print("size: " + size + "\n");
+        System.out.print("colours: " + Arrays.toString(coloursAvailable) + "\n");
+        System.out.print("price: " + price + "\n");
+        System.out.print("in stock: " + inStock + "\n");
+        System.out.print("quantity: " + quantity + "\n");
     }
 
     public boolean equals(MyClass item) {
-        return ((this.id ==  item.id) &&
+        return ((this.id == item.id) &&
                 (this.quantity == item.quantity) &&
                 (this.size == item.size) &&
                 (this.price == item.price) &&
